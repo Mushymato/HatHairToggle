@@ -14,12 +14,12 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <Name>HatHairToggle</Name>
+    <Name>Hat Hair Toggle</Name>
     <Authors>mushymato</Authors>
     <Description>Toggle hat hair by right click on the hat.</Description>
     <UniqueId>mushymato.HatHairToggle</UniqueId>
-    <UpdateKeys>Nexus:???,GitHub:Mushymato/HatHairToggle</UpdateKeys>
-    <Version>0.1.0</Version>
+    <UpdateKeys>Nexus:52285,GitHub:Mushymato/HatHairToggle</UpdateKeys>
+    <Version>1.0.0</Version>
     <BaseManifest>new</BaseManifest>
     <MinimumApiVersion_Behavior>Update</MinimumApiVersion_Behavior>
     <MinimumGameVersion_Behavior>UpdateFull</MinimumGameVersion_Behavior>

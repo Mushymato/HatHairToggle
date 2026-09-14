@@ -1,0 +1,5 @@
+{
+  "$schema": "https://smapi.io/schemas/i18n.json",
+  "config.ToggleKey.name": "切换键",
+  "config.ToggleKey.desc": "用于切换帽子发型显示模式的键"
+}
