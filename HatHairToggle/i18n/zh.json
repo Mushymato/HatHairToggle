@@ -1,5 +1,11 @@
 {
   "$schema": "https://smapi.io/schemas/i18n.json",
   "config.ToggleKey.name": "切换键",
-  "config.ToggleKey.desc": "用于切换帽子发型显示模式的键"
+  "config.ToggleKey.desc": "用于切换帽子发型显示模式的键",
+  "config.DefaultHairMode.name": "默认发型显示模式",
+  "config.DefaultHairMode.desc": "设置一个默认发型显示模式在佩戴帽子时自动启用",
+  "config.DefaultHairMode.value.-1": "未设置",
+  "config.DefaultHairMode.value.0": "帽子发型",
+  "config.DefaultHairMode.value.1": "普通发型",
+  "config.DefaultHairMode.value.2": "无发型"
 }

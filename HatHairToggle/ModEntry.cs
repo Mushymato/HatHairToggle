@@ -1,3 +1,4 @@
+using Netcode;
 using StardewModdingAPI;
 using StardewModdingAPI.Events;
 using StardewModdingAPI.Utilities;
@@ -9,7 +10,8 @@ namespace HatHairToggle;
 
 public sealed class ModConfig
 {
-    public KeybindList ToggleKey = KeybindList.Parse("MouseRight,LeftStick");
+    public KeybindList ToggleKey { get; set; } = KeybindList.Parse("MouseRight,LeftStick");
+    public int DefaultHairMode { get; set; } = -1;
 }
 
 public sealed class ModEntry : Mod
@@ -24,7 +26,13 @@ public sealed class ModEntry : Mod
         config = helper.ReadConfig<ModConfig>();
 
         helper.Events.GameLoop.GameLaunched += OnGameLaunched;
+        helper.Events.GameLoop.SaveLoaded += OnSaveLoaded;
         helper.Events.Input.ButtonsChanged += OnButtonsChanged;
+    }
+
+    private void OnSaveLoaded(object? sender, SaveLoadedEventArgs e)
+    {
+        Game1.player.hat.fieldChangeEvent += OnPlayerHatChanged;
     }
 
     private void OnGameLaunched(object? sender, GameLaunchedEventArgs e)
@@ -54,6 +62,30 @@ public sealed class ModEntry : Mod
                 I18n.Config_ToggleKey_Name,
                 I18n.Config_ToggleKey_Desc
             );
+            gmcm.AddTextOption(
+                ModManifest,
+                () => config.DefaultHairMode.ToString(),
+                (value) =>
+                {
+                    if (int.TryParse(value, out int intValue))
+                        config.DefaultHairMode = intValue;
+                },
+                I18n.Config_DefaultHairMode_Name,
+                I18n.Config_DefaultHairMode_Desc,
+                allowedValues: ["-1", "0", "1", "2"],
+                formatAllowedValue: (value) =>
+                    value == "-1"
+                        ? I18n.Config_DefaultHairMode_Value_N1()
+                        : I18n.GetByKey($"config.DefaultHairMode.value.{value}")
+            );
+        }
+    }
+
+    private void OnPlayerHatChanged(NetRef<Hat> field, Hat oldValue, Hat newValue)
+    {
+        if (newValue != null && config.DefaultHairMode != -1)
+        {
+            newValue.hairDrawType.Value = config.DefaultHairMode;
         }
     }
 

@@ -1,5 +1,11 @@
 {
   "$schema": "https://smapi.io/schemas/i18n.json",
   "config.ToggleKey.name": "Toggle Key",
-  "config.ToggleKey.desc": "Key used to change hat hair draw mode"
+  "config.ToggleKey.desc": "Key used to change hat hair draw mode",
+  "config.DefaultHairMode.name": "Default Hair Mode",
+  "config.DefaultHairMode.desc": "Set a default hair display mode which is applied to any hat you equip",
+  "config.DefaultHairMode.value.n1": "Not Set",
+  "config.DefaultHairMode.value.0": "Normal Hair",
+  "config.DefaultHairMode.value.1": "Hat Hair",
+  "config.DefaultHairMode.value.2": "No Hair"
 }
