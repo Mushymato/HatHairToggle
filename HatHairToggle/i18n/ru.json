@@ -1,5 +1,11 @@
 {
   "$schema": "https://smapi.io/schemas/i18n.json",
   "config.ToggleKey.name": "Клавиша переключения",
-  "config.ToggleKey.desc": "Клавиша, используемая для изменения режима отрисовки волос на шляпе"
+  "config.ToggleKey.desc": "Клавиша, используемая для изменения режима отрисовки волос на шляпе",
+  "config.DefaultHairMode.name": "Режим волос по умолчанию",
+  "config.DefaultHairMode.desc": "Установить режим отображения волос по умолчанию, который применяется к любой надетой шляпе",
+  "config.DefaultHairMode.value.n1": "Не задано",
+  "config.DefaultHairMode.value.0": "Обычные волосы",
+  "config.DefaultHairMode.value.1": "Волосы под шляпу",
+  "config.DefaultHairMode.value.2": "Без волос"
 }
